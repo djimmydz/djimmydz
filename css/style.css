@@ -176,16 +176,16 @@ body {
 }
 
 .card-body{
-    background-color: #000000;
+    background-color: #96AAFF;
 }
 
 .card-text{
     color: #ffffff;
-    background-color: #000000;
+    background-color: #96AAFF;
 }
 
 .card-text:hover{
-    color: #96AAFF;
+    color: #000000;
 }
 
 /* CSS pour que le curseur devienne une main sur les images cliquables */
