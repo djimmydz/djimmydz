@@ -28,13 +28,13 @@ const app = {
             const scrollY = window.scrollY;
             
             if (scrollY > 1900) {
-                image.style.backgroundImage = "url('../images/header_bg3.jpg')";
+                image.style.backgroundImage = "url('./images/header_bg3.jpg')";
             } else if (scrollY > 1100) {
-                image.style.backgroundImage = "url('../images/header-bg1.jpg')";
+                image.style.backgroundImage = "url('./images/header-bg1.jpg')";
             } else if (scrollY > 500) {
-                image.style.backgroundImage = "url('../images/header-bg2.jpg')";
+                image.style.backgroundImage = "url('./images/header-bg2.jpg')";
             } else {
-                image.style.backgroundImage = "url('../images/header-bg.jpg')";
+                image.style.backgroundImage = "url('./images/header-bg.jpg')";
             }
 
             image.style.backgroundSize = 'cover';
