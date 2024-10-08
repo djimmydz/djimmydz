@@ -15,7 +15,7 @@ const app = {
                 navbarItems.forEach(item => item.style.color = '#FFFFFF');
             } else {
                 navbar.style.backgroundColor = 'transparent';
-                navbarItems.forEach(item => item.style.color = '#D7A568');
+                navbarItems.forEach(item => item.style.color = '#000000');
             }
         });
     },

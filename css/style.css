@@ -14,7 +14,7 @@ body {
 .main-container {
     width: 100%;
     height: 100vh;
-    background-image: url('../images/header-bg1.avif');
+    background-image: url('../images/header-bg.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -44,7 +44,7 @@ body {
 .navbar > .navbar__items > a {
     margin: 0 3.5rem;
     cursor: pointer;
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 1rem;
 }
@@ -141,7 +141,7 @@ body {
     background-color: rgba(255, 255, 255, 0.100);
     color:#ffffff;
     width: 100%;
-    height: 20rem;
+    height: auto;
     backdrop-filter: blur(5px); /* Flou sur l'arrière-plan */
     padding: 20px; /* Pour ajouter un peu d'espacement autour du texte */
     border-radius: 25px; /* Optionnel : pour arrondir les bords */
@@ -324,7 +324,6 @@ body.modal-open {
     font-size: 24px; /* Taille de la flèche */
     width: 50px; /* Largeur du bouton */
     height: 50px; /* Hauteur du bouton */
-    display: flex; /* Utiliser flexbox */
     justify-content: center; /* Centrer horizontalement */
     align-items: center; /* Centrer verticalement */
     transition: background-color 0.3s ease;
@@ -402,3 +401,34 @@ body.modal-open {
 .whatsapp-button:hover {
     background-color: #20b158;
 }
+
+@media screen and (width <= 600px) {
+    .hero__text > h1 {
+        font-size: 3rem;
+    }
+
+    .title::before {
+        content: "";
+        display: block;
+        height: 90%;
+        width: 75%;
+        position: absolute;
+        top: 0;
+        left: 12%;
+        background: #000000; /* soulignement des titre */
+        transform: rotate(1deg); 
+        border-radius: 15% 30% 15% 30%;
+        z-index: -1;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #etapes > .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wrapper__step > a {
+        display: flex;
+        flex-direction: column !important;
+    }
+  }
