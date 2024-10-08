@@ -407,6 +407,18 @@ body.modal-open {
         font-size: 3rem;
     }
 
+    .whatsapp-icon {
+        bottom: 60px;
+    }
+
+    .whatsapp-modal{
+        bottom: 120px;
+    }
+
+    .scroll-to-top{
+        bottom: 60px;
+    }
+
     .title::before {
         content: "";
         display: block;
