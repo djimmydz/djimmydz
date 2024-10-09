@@ -178,12 +178,13 @@ body {
 }
 
 .card-body{
-    background-color: #96AAFF;
+    background-color: #96AAFF; 
 }
 
 .card-text{
     color: #ffffff;
     background-color: #96AAFF;
+    text-align: center;
 }
 
 .card-text:hover{
@@ -191,10 +192,14 @@ body {
 }
 
 /* CSS pour que le curseur devienne une main sur les images cliquables */
-.card-img-top {
+.card{
     cursor: pointer;
+    transition: transform 0.5s ease; /* Animation de la transformation sur 0.5 secondes */
 }
 
+.card:hover {
+    transform: scale(1.1); /* Zoom à 110% au survol */
+}
 /* Empêcher la désactivation de la barre de défilement */
 body.modal-open {
     overflow: visible; /* Forcer l'affichage de la barre de défilement même avec une modale ouverte */
@@ -429,7 +434,7 @@ body.modal-open {
         position: absolute;
         top: 0;
         left: 12%;
-        background: #000000; /* soulignement des titre */
+        background:#96AAFF; /* soulignement des titre */
         transform: rotate(1deg); 
         border-radius: 15% 30% 15% 30%;
         z-index: -1;
