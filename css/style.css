@@ -14,7 +14,7 @@ body {
 .main-container {
     width: 100%;
     height: 100vh;
-    background-image: url('../images/header-bg.jpg');
+    background-image: url('../images/background-3.png');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -167,7 +167,9 @@ body {
 }
 /* Partie Portfolio. */
 .section-portfolio {
-    background-color: white;
+    background-color: rgba(241, 241, 241, 0.100); /* Transparence avec un fond léger */
+    backdrop-filter: blur(5px); /* Flou sur l'arrière-plan */
+    -webkit-backdrop-filter: blur(10px); /* Support pour les navigateurs Webkit (comme Safari) */
     color:#ffffff;
     width: 100%;
     height: auto;
@@ -256,7 +258,7 @@ body.modal-open {
     position: absolute;
     top: 0;
     left: 25%;
-    background: #000000; /* soulignement des titre */
+    background:#96AAFF; /* soulignement des titre */
     transform: rotate(1deg); 
     border-radius: 15% 30% 15% 30%;
     z-index: -1;
@@ -443,4 +445,68 @@ body.modal-open {
         display: flex;
         flex-direction: column !important;
     }
+  }
+
+/* DIAPOSITIVE MODAL*/
+  .pic-ctn {
+    width: 100vw;
+    height: 200px;
+  }
+  
+  @keyframes display {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    10% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+  }
+  
+ 
+  
+  .pic-ctn > img {
+    position: absolute;
+    opacity: 0;
+    animation: display 10s infinite;
+    width: 100%;
+  }
+  
+  .pic-ctn {
+    display: flex;
+    overflow-x: auto;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.pic {
+    max-height: 300px; /* Limitez la hauteur des images */
+    max-width: 100%; /* Les images ne dépasseront pas la largeur de la modale */
+    object-fit: cover; /* Pour éviter les déformations */
+    margin: 0 10px;
+}
+  img:nth-child(2) {
+    animation-delay: 2s;
+  }
+  img:nth-child(3) {
+    animation-delay: 4s;
+  }
+  img:nth-child(4) {
+    animation-delay: 6s;
+  }
+  img:nth-child(5) {
+    animation-delay: 8s;
   }
