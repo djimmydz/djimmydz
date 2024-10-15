@@ -23,46 +23,44 @@ body {
     left: 0;
 }
 
-/* Navbar. */
+/*NAVBAR---------------------------*/
+/* Styles généraux de la navbar */
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
     position: fixed !important;
     top: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    height: auto;
-    padding: .5rem;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     z-index: 2;
     transition: background-color 0.7s ease;
 }
 
+.navbar__logo img {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.5s ease; /* Transition fluide */
+}
 
-.navbar > .navbar__items > a {
-    margin: 0 3.5rem;
+/* Agrandir le logo au survol */
+.navbar__logo img:hover {
+    transform: scale(1.6); /* Augmente la taille de 20% */
+}
+
+/* Menu items */
+.navbar__items {
+    display: flex;
+    gap: 3.5rem;
+}
+
+/* Bouton hamburger */
+.navbar__toggle {
+    display: none;
     cursor: pointer;
-    color: black;
-    text-decoration: none;
-    padding: 1rem;
+    font-size: 24px;
 }
-
-.navbar > .navbar__items > a:hover {
-    text-decoration: line-through;
-}
-
-.navbar > .navbar__logo {
-    justify-items: start;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.navbar > .navbar__logo > img {
-    width: 50px;
-    height: 50px;
-}
+/*NAVBAR---------------------------*/
 
 /* Partie visible a l'ecran avec la fleche et "Mon Super Projet". */
 .hero {
@@ -133,7 +131,7 @@ body {
 }
 
 .section-explication > p {
-    color: #ffffff;
+    color: #000000;
 }
 
 /* Partie Etapes du projet. */
@@ -200,6 +198,12 @@ body {
 .card:hover {
     transform: scale(1.1); /* Zoom à 110% au survol */
 }
+
+.card-img-top {
+    height: 400px; /* Vous pouvez ajuster cette valeur en fonction de vos besoins */
+    object-fit: cover; /* Cette propriété permet de redimensionner l'image sans la déformer */
+    width: 100%;
+}
 /* Empêcher la désactivation de la barre de défilement */
 body.modal-open {
     overflow: visible; /* Forcer l'affichage de la barre de défilement même avec une modale ouverte */
@@ -252,7 +256,70 @@ body.modal-open {
     transition: transform 0.3s ease-out;
 }
 
+/* DIAPOSITIVE MODAL*/
+.pic-ctn {
+    width: 100vw;
+    height: 200px;
+  }
+  
+  @keyframes display {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    10% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+  }
+  
+ 
+  
+  .pic-ctn > img {
+    position: absolute;
+    opacity: 0;
+    animation: display 10s infinite;
+    width: 100%;
+  }
+  
+  .pic-ctn {
+    display: flex;
+    overflow-x: auto;
+    max-width: 100%;
+    justify-content: center;
+}
 
+.pic {
+    max-height: 300px; /* Limitez la hauteur des images */
+    max-width: 100%; /* Les images ne dépasseront pas la largeur de la modale */
+    object-fit: cover; /* Pour éviter les déformations */
+    margin: 0 10px;
+}
+  img:nth-child(2) {
+    animation-delay: 2s;
+  }
+  img:nth-child(3) {
+    animation-delay: 4s;
+  }
+  img:nth-child(4) {
+    animation-delay: 6s;
+  }
+  img:nth-child(5) {
+    animation-delay: 8s;
+  }
+/* DIAPOSITIVE MODAL*/
 /*PARTIE MODAL */
 
 .title::before {
@@ -408,7 +475,126 @@ body.modal-open {
 .whatsapp-button:hover {
     background-color: #20b158;
 }
+/* Style pour l'icône WhatsApp */
 
+/*--------------------------------------------------------------
+# Section Appel à l'action, Venez nous découvrir
+--------------------------------------------------------------*/
+
+/* Styles pour la section "call-to-action" */
+.call-to-action {
+    background-color: transparent; /* Déjà transparent par défaut pour les sections, mais peut être gardé pour la clarté */
+    padding: 10px;
+    margin: 40px 0; /* Combinaison du margin-top et margin-bottom */
+}
+
+/* Styles pour le conteneur de la section "call-to-action" */
+.call-to-action .container {
+    padding: 80px 0; /* Combine padding-top et padding-bottom */
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative; /* Nécessaire pour le positionnement absolu des enfants */
+    clip-path: inset(0 round 15px); /* Bonne utilisation pour les coins arrondis */
+    
+    /* Masque avec dégradé pour un effet de fondu sur les bords */
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Styles pour les images à l'intérieur du conteneur de la section "call-to-action" */
+.call-to-action .container img {
+    position: fixed; /* Garder fixe dans l'écran n'est pas nécessaire ici, à revoir si c'est voulu */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 10; /* Bonne gestion des couches */
+    border-radius: 15px; /* Garde les coins arrondis de l'image */
+}
+
+/* Création de l'overlay */
+.call-to-action .container:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 30; /* Correct, assure que l'overlay reste au-dessus de l'image */
+    /* Ajouter une couleur ou un effet si nécessaire pour l'overlay */
+}
+
+/* Styles pour le contenu à l'intérieur du conteneur de la section "call-to-action" */
+.call-to-action .content {
+    position: relative;
+    z-index: 50; /* Assure que le contenu reste visible au-dessus de l'overlay */
+}
+
+/* Styles pour le titre de niveau 3 dans la section "call-to-action" */
+.call-to-action h3 {
+    color:#FFFFFF; /* Variable couleur, bonne pratique */
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Styles pour les paragraphes dans la section "call-to-action" */
+.call-to-action p {
+    color:#FFFFFF;
+    margin-bottom: 20px;
+}
+/*--------------------------------------------------------------
+# Section Appel à l'action, Venez nous découvrir
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Section video youtube
+--------------------------------------------------------------*/
+/* Conteneur global de la vidéo */
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: transparent; /* Aucun fond ici pour éviter l'effet "double bordure" */
+    padding: 0; /* Suppression du padding */
+}
+
+/* Conteneur direct de l'iframe (vidéo) */
+.video-wrapper {
+    border: 5px solid #96AAFF; /* Applique une seule bordure ici */
+    border-radius: 15px;
+    overflow: hidden; /* Assure que l'iframe ne déborde pas */
+    padding: 0; /* Pas de padding pour que l'iframe prenne tout l'espace */
+    width: 100%;
+    height: 100%;
+}
+
+/* Supprimer toute bordure interne ou espace dans l'iframe */
+.video-wrapper iframe {
+    display: block;
+    width: 100%; /* L'iframe prend toute la largeur du conteneur */
+    height: 100%; /* L'iframe prend toute la hauteur du conteneur */
+    border: none; /* Supprime toute bordure par défaut de l'iframe */
+}
+
+/* Personnaliser le lecteur Plyr */
+.plyr {
+    background-color: #fff; /* Couleur de fond */
+    color: #333; /* Couleur du texte */
+}
+
+.plyr--full-ui .plyr__controls {
+    background-color: rgba(255, 255, 255, 0.8); /* Contrôles semi-transparents */
+}
+
+/* Couleur des icônes de contrôle */
+html {
+    --plyr-color-main: #96AAFF;
+  }
+
+  /*--------------------------------------------------------------
+# Section video youtube
+--------------------------------------------------------------*/
+
+/*MEDIA QUERIE RESPONSIVE*/
 @media screen and (width <= 600px) {
     .hero__text > h1 {
         font-size: 3rem;
@@ -450,68 +636,48 @@ body.modal-open {
         display: flex;
         flex-direction: column !important;
     }
-  }
 
-/* DIAPOSITIVE MODAL*/
-  .pic-ctn {
-    width: 100vw;
-    height: 200px;
-  }
-  
-  @keyframes display {
-    0% {
-      transform: translateX(200px);
-      opacity: 0;
+    .navbar {
+        padding: 1rem;
     }
-    10% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    20% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    30% {
-      transform: translateX(-200px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(-200px);
-      opacity: 0;
-    }
-  }
-  
- 
-  
-  .pic-ctn > img {
-    position: absolute;
-    opacity: 0;
-    animation: display 10s infinite;
-    width: 100%;
-  }
-  
-  .pic-ctn {
-    display: flex;
-    overflow-x: auto;
-    max-width: 100%;
-    justify-content: center;
-}
 
-.pic {
-    max-height: 300px; /* Limitez la hauteur des images */
-    max-width: 100%; /* Les images ne dépasseront pas la largeur de la modale */
-    object-fit: cover; /* Pour éviter les déformations */
-    margin: 0 10px;
-}
-  img:nth-child(2) {
-    animation-delay: 2s;
+    /* Cacher le menu par défaut sur mobile */
+    .navbar__items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #96AAFF;
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    /* Afficher le bouton hamburger */
+    .navbar__toggle {
+        display: block;
+    }
+
+    /* Afficher le menu lorsque la classe 'show' est activée */
+    .navbar__items.show {
+        display: flex;
+    }
+
+    .navbar__items a {
+        padding: 1rem 0;
+        width: 100%;
+        border-bottom: 1px solid white;
+        color: white;
+    }
+
+    .video-container {
+        padding: 20px;
+        margin: 10px;
+      }
+    
+      .video-wrapper {
+        border: 3px solid #1e73be; /* Réduction de la taille de la bordure sur les petits écrans */
+      }
   }
-  img:nth-child(3) {
-    animation-delay: 4s;
-  }
-  img:nth-child(4) {
-    animation-delay: 6s;
-  }
-  img:nth-child(5) {
-    animation-delay: 8s;
-  }
+/*MEDIA QUERIE RESPONSIVE*/

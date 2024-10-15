@@ -44,6 +44,9 @@ const app = {
     }
 }
 
+// Initialiser Plyr
+const player = new Plyr('#player');
+
 document.addEventListener('DOMContentLoaded', app.init);
 
 
@@ -81,6 +84,17 @@ document.addEventListener('DOMContentLoaded', app.init);
                 } else {
                     whatsappModal.style.display = 'none';
                 }
+            });
+        });
+
+ // PARTIE NAVBAR RESPONSIVE
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbarToggle');
+            const navbarItems = document.getElementById('navbarItems');
+        
+            // Ajouter un event listener sur le bouton hamburger
+            navbarToggle.addEventListener('click', function() {
+                navbarItems.classList.toggle('show'); // Ajoute ou retire la classe 'show'
             });
         });
     

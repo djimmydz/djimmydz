@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet</title>
+    <title>Meilleures Adresses Var</title>
+    <meta name="description" content="Découvrez les plus beaux lieux et randonnées à visiter dans le Var. Explorez des sentiers pittoresques, des sites naturels exceptionnels et des adresses incontournables pour profiter pleinement de cette région entre mer et montagne.">
+    <meta name="keywords" content="Var, tourisme, lieux à découvrir, vidéo, trésors cachés, guide local, randonnée">
+    <meta name="author" content="Djimmy Boutaghane">
+    <meta name="copyright" content="Djimmy Boutaghane">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
@@ -14,9 +20,17 @@
     <!-- Navbar -->
     <div class="navbar">
         <div class="navbar__logo">
-            <img src="./images/logoNavbar.png" alt="">
+            <!-- Le logo renvoie vers index.html -->
+            <a href="index.html"><img src="./images/logoNavbar.png" alt="Logo"></a>
         </div>
-        <div class="navbar__items">
+
+        <!-- Bouton hamburger (affiché sur mobile) -->
+        <div class="navbar__toggle" id="navbarToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <!-- Menu items -->
+        <div class="navbar__items" id="navbarItems">
             <a href="#explication"><i class="fa-solid fa-comment"></i> En savoir plus</a>
             <a href="#etapes"><i class="fa-solid fa-route"></i> Les randonnées</a>
             <a href="#portfolio"><i class="fa-solid fa-map-location-dot"></i> Meilleurs adresses</a>
@@ -35,14 +49,29 @@
     </div>
     </div>
     <div>
-        <!-- Section Explication -->
+        <!-- Section En savoir plus -->
     <div class="container-fluid"> <!-- Conteneur fluide -->
         <div class="section-explication p-5 d-flex flex-column justify-content-center" id="explication">
             <h1 class="title text-center mb-3">En savoir plus</h1>
             <p>Notre site est dédié aux amoureux de la nature. Que vous soyez passionné de randonnée ou à la recherche de paysages à couper le souffle, nous vous proposons une sélection des meilleurs endroits à visiter dans le Var. Des sentiers de randonnée cachés aux plus belles plages, en passant par des sites historiques, notre guide vous offre des suggestions incontournables pour vivre des moments uniques au cœur de la Provence. Préparez-vous à explorer et à vous émerveiller !</p>
         </div>
     </div>
-        <div class="section-vide"></div>
+
+        <!-- Section VIDEO YOUTUBE  -->
+        <div class="container video-container">
+            <div class="ratio ratio-16x9 video-wrapper">
+                <div class="plyr__video-embed" id="player">
+                    <iframe
+                        src="https://www.youtube.com/watch?v=TyTZHklYKro"
+                        allowfullscreen
+                        allow="autoplay; encrypted-media"
+                        title="Découvrez les trésors du Var">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <!-- FIN Section VIDEO YOUTUBE  -->
+
         <!-- Section Etapes -->
     <div class="container-fluid"> <!-- Conteneur fluide -->
         <div class="section-etapes p-5 d-flex flex-column justify-content-center" id="etapes">
@@ -79,7 +108,26 @@
             </div>
         </div>
     </div>
-        <div class="section-vide"></div>
+
+    <!-- Début de la partie venez nous découvrir -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+
+        <div class="container">
+          <img src="./images/header-bg.jpg" alt="Image de fond de la partie venez nous découvrir">
+          <div class="content row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-xl-10">
+              <div class="text-center">
+                <h3>Découvrez les trésors cachés du Var</h3>
+                <p>Plongez au cœur du Var et laissez-vous surprendre par ses adresses incontournables.  
+                  <br> Que vous soyez amateur de gastronomie, passionné de nature ou en quête d'expériences uniques, nos recommandations vous guideront vers des lieux qui éveilleront vos sens...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </section>
+      <!-- Fin de la partie venez nous découvrir -->
+
         <!-- Section Portfolio avec 6 cartes -->
         <div class="container-fluid"> <!-- Conteneur fluide -->
 <div class="section-portfolio p-5 d-flex flex-column justify-content-center" id="portfolio">
@@ -95,7 +143,7 @@
             <div class="card m-4" style="width: 18rem;">
                 <img class="card-img-top" src="./images/gorge-6.jpg" alt="Crayons" data-toggle="modal" data-target="#modal1">
                 <div class="card-body">
-                    <p class="card-text">Les Gorges du Verdon.</p>
+                    <p class="card-text">Les Gorges du Verdon</p>
                 </div>
             </div>
 
@@ -103,15 +151,15 @@
             <div class="card m-4" style="width: 18rem;">
                 <img class="card-img-top" src="./images/Massif-6.jpg" alt="Crayons" data-toggle="modal" data-target="#modal2">
                 <div class="card-body">
-                    <p class="card-text">Massif de l'Estérel.</p>
+                    <p class="card-text">Massif de l'Estérel</p>
                 </div>
             </div>
 
             <!-- Carte 3 -->
             <div class="card m-4" style="width: 18rem;">
-                <img class="card-img-top" src="./images/Massif-4.jpg" alt="Crayons" data-toggle="modal" data-target="#modal3">
+                <img class="card-img-top" src="./images/plateau-1.jpg" alt="Crayons" data-toggle="modal" data-target="#modal3">
                 <div class="card-body">
-                    <p class="card-text">Description du projet 3.</p>
+                    <p class="card-text">Plateau de Valensole</p>
                 </div>
             </div>
         </div>
@@ -175,7 +223,7 @@
             </div>
             <div class="modal-body">
                 <!-- Texte descriptif -->
-                <h3>Massif de l'Estérel</h3>
+                <h3>Le massif de l'Estérel abrite de nombreux sites incontournables</h3>
                 <p>Le massif de l'Estérel est une chaîne montagneuse volcanique de faible altitude, culminant à 618 mètres, et s'étendant sur 32 000 hectares le long de la mer Méditerranée, entre le Var et les Alpes-Maritimes. Près de la moitié de ce massif est classée en zone « Natura 2000 ». Il couvre les communes de Saint-Raphaël, Fréjus, Bagnols-en-Forêt et les Adrets de l'Estérel.
  
                     Le massif de l'Estérel abrite de nombreux sites incontournables, offrant des vues imprenables sur la Méditerranée et favorisant les activités de plein air. Parmi ces lieux, on trouve le Pic de l'Ours, le Cap Roux, le Cap Dramont et le Mont Vinaigre.
@@ -208,24 +256,26 @@
     <div class="modal-dialog modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Projet 3</h5>
+                <h5 class="modal-title">Plateau de Valensole</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <!-- Texte descriptif -->
-                <h3>Description du projet 3</h3>
-                <p>Voici une description du projet 3, qui inclut un carrousel d'images pour illustrer le travail effectué.</p>
+                <h3>Perché à 590 mètres d'altitude, le village de Valensole a donné son nom au plateau qui l’entoure</h3>
+                <p>S'étendant sur près de 12 700 hectares, cette commune est l'une des plus vastes de France. Surnommé « le grenier de la région », le plateau de 800 km² est principalement dédié à la culture de la lavande et des céréales. 
+                    Situé à une altitude modérée, Valensole voit ses champs de lavande fleurir dès la mi-juin jusqu'à la fin du mois. Chaque année, une grande fête de la lavande est organisée généralement le troisième week-end de juillet.
+                </p>
 
                 <!-- Carrousel d'images Bootstrap -->
                 <!-- Carrousel d'images Bootstrap -->
                 <div class="pic-ctn">
-                    <img src="./images/header-bg.jpg" alt="" class="pic">
-                    <img src="./images/header-bg2.jpg" alt="" class="pic">
-                    <img src="./images/header-bg1.jpg" alt="" class="pic">
-                    <img src="./images/header_bg3.jpg" alt="" class="pic">
-                    <img src="./images/header-bg.jpg" alt="" class="pic">
+                    <img src="./images/plateau-2.jpg" alt="" class="pic">
+                    <img src="./images/plateau-6.jpg" alt="" class="pic">
+                    <img src="./images/plateau-3.jpg" alt="" class="pic">
+                    <img src="./images/plateau-4.jpg" alt="" class="pic">
+                    <img src="./images/plateau-5.jpg" alt="" class="pic">
                   </div>
 
             </div>
@@ -245,6 +295,8 @@
 
 </div>
     </div>
+    <!-- Plyr JS -->
+    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="./js/index.js"></script>
     <!-- Ajout de Bootstrap (CSS et JS) si non inclus -->
@@ -257,7 +309,7 @@
 
 <footer class="footer">
     <div class="footer__content">
-        <p class="footer__copyright">© 2024 Djimmy. All rights reserved.</p>
+        <p class="footer__copyright">© 2024 Djimmy Boutaghane. All rights reserved.</p>
         <ul class="footer__links">
             <li><a href="politique.html" target="_blank">Politique de confidentialité</a></li>
             <li><a href="terme.html" target="_blank">Termes de services</a></li>
