@@ -680,5 +680,10 @@ html {
       .video-wrapper {
         border: 3px solid #1e73be; /* Réduction de la taille de la bordure sur les petits écrans */
       }
+
+      .call-to-action .container {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
   }
 /*MEDIA QUERIE RESPONSIVE*/
