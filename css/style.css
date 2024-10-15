@@ -384,9 +384,10 @@ body.modal-open {
     text-decoration: underline;
 }
 
+/*PARTIE FLECHE POUR REMONTER */
 .scroll-to-top {
     background-color:rgba(255, 255, 255, 0.1); /* Couleur du bouton */
-    color: #E68200;
+    color: #000000;
     border: none;
     padding: 0;
     border-radius: 50%; /* Rendre le bouton circulaire */
@@ -496,10 +497,6 @@ body.modal-open {
     position: relative; /* Nécessaire pour le positionnement absolu des enfants */
     clip-path: inset(0 round 15px); /* Bonne utilisation pour les coins arrondis */
     
-    /* Masque avec dégradé pour un effet de fondu sur les bords */
-    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
-    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
-
 }
 
 /* Styles pour les images à l'intérieur du conteneur de la section "call-to-action" */

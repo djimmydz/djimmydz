@@ -7,17 +7,38 @@ const app = {
 
     navbarColor: function () {
         const navbar = document.querySelector('.navbar'); 
-        const navbarItems = document.querySelectorAll('.navbar > .navbar__items > a'); 
-        
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                navbar.style.backgroundColor = '#96AAFF';
-                navbarItems.forEach(item => item.style.color = '#FFFFFF');
-            } else {
-                navbar.style.backgroundColor = 'transparent';
-                navbarItems.forEach(item => item.style.color = '#000000');
-            }
-        });
+        const navbarItems = document.querySelectorAll('.navbar > .navbar__items > a');
+    
+        // Fonction pour gérer la couleur de la navbar
+        function handleNavbarColor() {
+            // Vérification si l'écran est en mode mobile (par exemple, largeur de l'écran < 768px)
+            const isMobile = window.innerWidth < 768;
+    
+            // Détecte le scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    // Changer la couleur de fond de la navbar au scroll
+                    navbar.style.backgroundColor = '#96AAFF';
+                    navbarItems.forEach(item => item.style.color = '#FFFFFF');
+                } else {
+                    if (isMobile) {
+                        // Sur mobile, si l'utilisateur est tout en haut, appliquer un fond non-transparent
+                        navbar.style.backgroundColor = '#96AAFF';
+                        navbarItems.forEach(item => item.style.color = '#FFFFFF');
+                    } else {
+                        // En desktop, rester transparent en haut de page
+                        navbar.style.backgroundColor = 'transparent';
+                        navbarItems.forEach(item => item.style.color = '#000000');
+                    }
+                }
+            });
+        }
+    
+        // Exécuter la fonction
+        handleNavbarColor();
+    
+        // Recalculer au redimensionnement de la fenêtre (pour s'adapter aux changements de taille)
+        window.addEventListener('resize', handleNavbarColor);
     },
     /* Je regarde par rapport a l'axe des ordonnées le scroll, et je change l'image.
     */
