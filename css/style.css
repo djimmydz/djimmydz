@@ -477,7 +477,7 @@ body.modal-open {
 }
 /* Style pour l'icône WhatsApp */
 
-/*--------------------------------------------------------------
+/*-----------------------------------------------------------------------------------------------------------------
 # Section Appel à l'action, Venez nous découvrir
 --------------------------------------------------------------*/
 
@@ -497,8 +497,9 @@ body.modal-open {
     clip-path: inset(0 round 15px); /* Bonne utilisation pour les coins arrondis */
     
     /* Masque avec dégradé pour un effet de fondu sur les bords */
-    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
     -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+
 }
 
 /* Styles pour les images à l'intérieur du conteneur de la section "call-to-action" */
@@ -546,7 +547,7 @@ body.modal-open {
 --------------------------------------------------------------*/
 
 
-/*--------------------------------------------------------------
+/*----------------------------------------------------------------------------------------------------------------
 # Section video youtube
 --------------------------------------------------------------*/
 /* Conteneur global de la vidéo */
