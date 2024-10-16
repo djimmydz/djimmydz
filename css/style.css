@@ -203,7 +203,9 @@ body {
     height: 400px; /* Vous pouvez ajuster cette valeur en fonction de vos besoins */
     object-fit: cover; /* Cette propriété permet de redimensionner l'image sans la déformer */
     width: 100%;
+    cursor: pointer;
 }
+
 /* Empêcher la désactivation de la barre de défilement */
 body.modal-open {
     overflow: visible; /* Forcer l'affichage de la barre de défilement même avec une modale ouverte */
