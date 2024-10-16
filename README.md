@@ -2,7 +2,6 @@
 
 ## Explications
 
-⚠️ Il manque de la personnalisation, car tout est basique dedans, il n'y a pas forcément d'harmonie.
 
 Tu trouveras :
 
@@ -15,10 +14,8 @@ Tu trouveras :
 
 - Changer les couleurs qu'elles soient a ton gout.
 - Changer la police d'ecriture qu'elle soit a ton gout.
-- Rendre responsive la navbar (sur mobile).
 - Rajouter une section Contact en t'inspirant de ce qui est deja present dans l'__index.html__.
 - Changer les photos qu'elles soient a ton gout et representatives du projet.
 - Remplacer les textes par des textes pertinents.
 
-
-💥 Tu peux tout modifier comme tu le souhaites. 
+ 
