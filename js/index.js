@@ -119,3 +119,18 @@ document.addEventListener('DOMContentLoaded', app.init);
             });
         });
     
+ // Sélectionner tous les liens qui ont la classe "smooth-scroll"
+    document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+        anchor.addEventListener('click', function(event) {
+            event.preventDefault(); // Empêche l'ajout de l'ancre dans l'URL
+            
+            // Cible l'élément correspondant à l'attribut href (l'ancre)
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            // Fais défiler la page jusqu'à la section cible
+            targetElement.scrollIntoView({
+                behavior: 'smooth' // Défilement fluide
+            });
+        });
+    });
