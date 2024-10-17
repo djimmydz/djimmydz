@@ -2,7 +2,7 @@ const app = {
     init: function () {
         console.log('Javascript enabled');
         app.navbarColor();
-        app.parallaxImage();
+        // app.parallaxImage();
     },
 
     navbarColor: function () {
@@ -42,27 +42,27 @@ const app = {
     },
     /* Je regarde par rapport a l'axe des ordonnées le scroll, et je change l'image.
     */
-    parallaxImage: function () {
-        const image = document.querySelector('.main-container');
+    // parallaxImage: function () {
+    //     const image = document.querySelector('.main-container');
         
-        window.addEventListener('scroll', function() {
-            const scrollY = window.scrollY;
+    //     window.addEventListener('scroll', function() {
+    //         const scrollY = window.scrollY;
             
-            if (scrollY > 1900) {
-                image.style.backgroundImage = "url('./images/background-4.png')";
-            } else if (scrollY > 1100) {
-                image.style.backgroundImage = "url('./images/background-2.png')";
-            } else if (scrollY > 500) {
-                image.style.backgroundImage = "url('./images/background-1.png')";
-            } else {
-                image.style.backgroundImage = "url('./images/background-3.png')";
-            }
+    //         if (scrollY > 1900) {
+    //             image.style.backgroundImage = "url('./images/background-4.png')";
+    //         } else if (scrollY > 1100) {
+    //             image.style.backgroundImage = "url('./images/background-2.png')";
+    //         } else if (scrollY > 500) {
+    //             image.style.backgroundImage = "url('./images/background-1.png')";
+    //         } else {
+    //             image.style.backgroundImage = "url('./images/background-3.png')";
+    //         }
 
-            image.style.backgroundSize = 'cover';
-            image.style.backgroundPosition = 'center';
-            image.style.transition = 'background-image 0.5s ease';
-        });
-    }
+    //         image.style.backgroundSize = 'cover';
+    //         image.style.backgroundPosition = 'center';
+    //         image.style.transition = 'background-image 0.5s ease';
+    //     });
+    // }
 }
 
 // Initialiser Plyr
