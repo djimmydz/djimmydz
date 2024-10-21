@@ -14,7 +14,7 @@ body {
 .main-container {
     width: 100%;
     height: 100vh;
-    background-image: url('../images/background-1.png');
+    background-image: url('../images/marseille.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -78,10 +78,18 @@ body {
     left: 50%;
     color: #ffffff;
     transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(241, 241, 241, 0.100); /* Transparence avec un fond léger */
+    backdrop-filter: blur(5px); /* Flou sur l'arrière-plan */
+    -webkit-backdrop-filter: blur(10px); /* Support pour les navigateurs Webkit (comme Safari) */
+}
+
+.hero__text > h1 {
+    font-size: 6rem;
 }
 
 .region {
-    color:#96AAFF
+    color:#e0f23d
 }
 
 /*FLECHE APPEL A SCROLLER-------------*/
@@ -95,7 +103,7 @@ body {
 }
 
 .scroll-down a {
-    color: #96AAFF;
+    color: #e0f23d;
     font-size: 2rem; /* Taille de la flèche */
     display: inline-block;
     animation: bounce 1s infinite; /* Animation de va-et-vient */
@@ -127,11 +135,11 @@ body {
 }
 
 .section-explication > h1 {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .section-explication > p {
-    color: #000000;
+    color: #ffffff;
 }
 
 /* Partie Etapes du projet. */
@@ -151,7 +159,9 @@ body {
     width: 160px;               /* Largeur du cercle */
     height: 160px;              /* Hauteur du cercle */
     border-radius: 50%;         /* Crée un cercle */
-    background-color: #96AAFF;  /* Couleur de fond */
+    background-color: #e5ff0000;  /* Couleur de fond */
+    border: solid;
+    border-color: #ffffff;
     display: flex;              /* Permet d'aligner le contenu */
     justify-content: center;    /* Centrer horizontalement */
     align-items: center;        /* Centrer verticalement */
@@ -161,7 +171,7 @@ body {
 }
 
 .circle-link:hover {
-    background-color: #D7A568;   /* Changement de couleur au survol */
+    background-color: #e0f23d;   /* Changement de couleur au survol */
 }
 /* Partie Portfolio. */
 .section-portfolio {
@@ -176,12 +186,12 @@ body {
 }
 
 .card-body{
-    background-color: #96AAFF; 
+    background-color: #ffffff66; 
 }
 
 .card-text{
-    color: #ffffff;
-    background-color: #96AAFF;
+    color: #000000;
+    background-color: #ffffff66;
     text-align: center;
 }
 
@@ -224,33 +234,37 @@ body.modal-open {
     padding: 10px 20px;
 }
 
+.text-center{
+    color: #ffffff;
+}
+
 /*PARTIE MODAL */
 .modal-content {
     background-color: #282c34; /* Fond sombre */
-    color: #000000; /* Texte blanc */
+    color: #000000; /* Texte noir */
     border-radius: 15px;
     border: none;
 }
 
 .modal-header {
-    background-color: #96AAFF; /* Fond bleu clair */
-    color: #282c34; /* Couleur du texte */
+    background-color: #ffffff; /* Fond bleu clair */
+    color: #9683ec; /* Couleur du texte */
 }
 
 .modal-footer {
-    background-color: #20232a;
+    background-color: #ffffff;
     color: #61dafb;
 }
 
 .btn-custom {
-    background-color: #96AAFF;
+    background-color: #9683ec66;
     border: none;
     color: #fff;
     border-radius: 20px;
 }
 
 .btn-custom:hover {
-    background-color: #96AAFF;
+    background-color: #9683ec66;
 }
 
 .modal-dialog {
@@ -324,24 +338,13 @@ body.modal-open {
 /* DIAPOSITIVE MODAL*/
 /*PARTIE MODAL */
 
-.title::before {
-    content: "";
-    display: block;
-    height: 90%;
-    width: 55%;
-    position: absolute;
-    top: 0;
-    left: 25%;
-    background:#96AAFF; /* soulignement des titre */
-    transform: rotate(1deg); 
-    border-radius: 15% 30% 15% 30%;
-    z-index: -1;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.mb-5 {
+    margin-bottom: 5rem; /* Ajustez cette valeur selon l'espacement désiré */
 }
 
 /*FOOTER-------------------*/
 .footer {
-    background-color:#96AAFF;
+    background-color:#ffffff;
     color: #FFFFFF;
     padding: 20px 0;
     text-align: center;
@@ -369,6 +372,7 @@ body.modal-open {
     margin: 10px 0;
     display: flex;
     gap: 20px;
+    color: #000000;
 }
 
 .footer__links li {
@@ -376,7 +380,7 @@ body.modal-open {
 }
 
 .footer__links a {
-    color: #ffffff; /* Couleur des liens */
+    color: #000000; /* Couleur des liens */
     text-decoration: none;
     font-weight: bold;
     padding: 1rem;
@@ -384,12 +388,13 @@ body.modal-open {
 
 .footer__links a:hover {
     text-decoration: underline;
+    color: #20b158;
 }
 
 /*PARTIE FLECHE POUR REMONTER */
 .scroll-to-top {
-    background-color:rgba(255, 255, 255, 0.1); /* Couleur du bouton */
-    color: #000000;
+    background-color:#20b158; /* Couleur du bouton */
+    color: #ffffff;
     border: none;
     padding: 0;
     border-radius: 50%; /* Rendre le bouton circulaire */
@@ -407,8 +412,9 @@ body.modal-open {
 }
 
 .scroll-to-top:hover {
-    background-color: #D7A568; /* Couleur au survol */
-    color: rgb(255, 255, 255); /* Changer la couleur de la flèche au survol */
+    background-color: #e0f23d; /* Couleur au survol */
+    color: #000000; /* Changer la couleur de la flèche au survol */
+    color: #ffffff;
 }
 
 
@@ -530,7 +536,7 @@ body.modal-open {
 
 /* Styles pour le titre de niveau 3 dans la section "call-to-action" */
 .call-to-action h3 {
-    color:#FFFFFF; /* Variable couleur, bonne pratique */
+    color:#ffffff; /* Variable couleur, bonne pratique */
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -538,13 +544,12 @@ body.modal-open {
 
 /* Styles pour les paragraphes dans la section "call-to-action" */
 .call-to-action p {
-    color:#FFFFFF;
+    color:#ffffff;
     margin-bottom: 20px;
 }
 /*--------------------------------------------------------------
 # Section Appel à l'action, Venez nous découvrir
 --------------------------------------------------------------*/
-
 
 /*----------------------------------------------------------------------------------------------------------------
 # Section video youtube
@@ -559,7 +564,7 @@ body.modal-open {
 
 /* Conteneur direct de l'iframe (vidéo) */
 .video-wrapper {
-    border: 5px solid #96AAFF; /* Applique une seule bordure ici */
+    border: 5px solid #9683ec66; /* Applique une seule bordure ici */
     border-radius: 15px;
     overflow: hidden; /* Assure que l'iframe ne déborde pas */
     padding: 0; /* Pas de padding pour que l'iframe prenne tout l'espace */
@@ -587,12 +592,35 @@ body.modal-open {
 
 /* Couleur des icônes de contrôle */
 html {
-    --plyr-color-main: #96AAFF;
+    --plyr-color-main: #9683ec66;
   }
 
   /*--------------------------------------------------------------
 # Section video youtube
 --------------------------------------------------------------*/
+
+/* Style du carrousel */
+.carousel-item {
+    padding: 15px 0;
+  }
+
+  .carousel-item img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+/* Boutons de contrôle */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: brightness(0) invert(1); /* Change la couleur des icônes pour qu'elles soient blanches */
+    opacity: 0.8; /* Légère transparence pour que les contrôles soient plus subtils */
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    opacity: 1; /* Contrôles entièrement visibles au hover */
+}
+/* Style du carrousel */
 
 /*MEDIA QUERIE RESPONSIVE*/
 @media screen and (width <= 600px) {
@@ -620,11 +648,11 @@ html {
         position: absolute;
         top: 0;
         left: 12%;
-        background:#96AAFF; /* soulignement des titre */
+        /* background:#9683ec66; soulignement des titre */
         transform: rotate(1deg); 
         border-radius: 15% 30% 15% 30%;
         z-index: -1;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
     }
 
     #etapes > .wrapper {
@@ -646,9 +674,9 @@ html {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 85px;
         right: 0;
-        background-color: #96AAFF;
+        background-color: #ffffffc9;
         width: 100%;
         text-align: center;
         padding-top: 20px;
@@ -685,5 +713,9 @@ html {
         mask-image: none;
         -webkit-mask-image: none;
     }
+    
   }
 /*MEDIA QUERIE RESPONSIVE*/
+
+
+

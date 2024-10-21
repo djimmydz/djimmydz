@@ -18,13 +18,13 @@ const app = {
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
                     // Changer la couleur de fond de la navbar au scroll
-                    navbar.style.backgroundColor = '#96AAFF';
-                    navbarItems.forEach(item => item.style.color = '#FFFFFF');
+                    navbar.style.backgroundColor = '#ffffffc9';
+                    navbarItems.forEach(item => item.style.color = '#000000');
                 } else {
                     if (isMobile) {
                         // Sur mobile, si l'utilisateur est tout en haut, appliquer un fond non-transparent
-                        navbar.style.backgroundColor = '#96AAFF';
-                        navbarItems.forEach(item => item.style.color = '#FFFFFF');
+                        navbar.style.backgroundColor = '#ffffffc9';
+                        navbarItems.forEach(item => item.style.color = '#000000');
                     } else {
                         // En desktop, rester transparent en haut de page
                         navbar.style.backgroundColor = 'transparent';
