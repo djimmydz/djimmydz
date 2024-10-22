@@ -109,15 +109,25 @@ document.addEventListener('DOMContentLoaded', app.init);
         });
 
  // PARTIE NAVBAR RESPONSIVE
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbarToggle = document.getElementById('navbarToggle');
-            const navbarItems = document.getElementById('navbarItems');
-        
-            // Ajouter un event listener sur le bouton hamburger
-            navbarToggle.addEventListener('click', function() {
-                navbarItems.classList.toggle('show'); // Ajoute ou retire la classe 'show'
-            });
+ document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggle = document.getElementById('navbarToggle');
+    const navbarItems = document.getElementById('navbarItems');
+    const navbarLinks = document.querySelectorAll('.navbar__items a'); // Sélectionner les liens du menu
+
+    // Ajouter un event listener sur le bouton hamburger
+    navbarToggle.addEventListener('click', function() {
+        navbarItems.classList.toggle('show'); // Ajoute ou retire la classe 'show'
+    });
+
+    // Ajouter un event listener sur chaque lien du menu
+    navbarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Retire la classe 'show' pour refermer le menu
+            navbarItems.classList.remove('show');
         });
+    });
+});
+
     
  // Sélectionner tous les liens qui ont la classe "smooth-scroll"
     document.querySelectorAll('.smooth-scroll').forEach(anchor => {

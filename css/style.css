@@ -54,6 +54,10 @@ body {
     gap: 3.5rem;
 }
 
+.navbar__items a {
+    color: #000000 !important;
+}
+
 /* Bouton hamburger */
 .navbar__toggle {
     display: none;
@@ -403,7 +407,7 @@ body.modal-open {
     bottom: 30px;
     right: 30px;
     display: none; /* Cacher le bouton par défaut */
-    font-size: 24px; /* Taille de la flèche */
+    font-size: 20px; /* Taille de la flèche */
     width: 50px; /* Largeur du bouton */
     height: 50px; /* Hauteur du bouton */
     justify-content: center; /* Centrer horizontalement */
@@ -412,7 +416,7 @@ body.modal-open {
 }
 
 .scroll-to-top:hover {
-    background-color: #e0f23d; /* Couleur au survol */
+    background-color: #E0F23D; /* Couleur au survol */ 
     color: #000000; /* Changer la couleur de la flèche au survol */
     color: #ffffff;
 }
@@ -706,7 +710,7 @@ html {
       }
     
       .video-wrapper {
-        border: 3px solid #1e73be; /* Réduction de la taille de la bordure sur les petits écrans */
+        border: 3px solid #ffffff; /* Réduction de la taille de la bordure sur les petits écrans */
       }
 
       .call-to-action .container {
